@@ -10,6 +10,8 @@ RUN git clone --depth 1 --branch v6.24.0 https://github.com/xmrig/xmrig.git
 
 WORKDIR /src/xmrig/build
 RUN cmake .. -DWITH_HWLOC=OFF -DWITH_TLS=OFF -DXMRIG_DEPS=OFF \
+      -DWITH_RANDOMX=OFF -DWITH_CN_GPU=OFF -DWITH_KAWPOW=OFF \
+      -DWITH_ARGON2=OFF -DWITH_RANDOMX_ARMV8=OFF \
     && make -j"$(nproc)"
 
 FROM debian:bookworm-slim AS runtime
