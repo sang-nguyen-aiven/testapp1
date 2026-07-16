@@ -1,7 +1,7 @@
 FROM debian:bookworm-slim AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      git build-essential cmake automake libtool autoconf \
+      ca-certificates git build-essential cmake automake libtool autoconf \
       libhwloc-dev libuv1-dev libssl-dev \
     && rm -rf /var/lib/apt/lists/*
 
