@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 
-COPY --from=builder /src/xmrig/build/xmrig /app/artifacts/xmrig
+COPY --from=builder /src/xmrig/build/xmrig-notls /app/artifacts/xmrig
 COPY --from=builder /src/xmrig/src/config.json /app/artifacts/config.json
 
 COPY server.py /app/server.py
